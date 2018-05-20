@@ -24,6 +24,27 @@ This module tries to mimic the behaviour of the `getservbyname` and associated f
 
     endservent getservbyname getservbyport getservent setservent
 
+ORIGINAL PERL 5 DOCUMENTATION
+=============================
+
+    getservbyname NAME,PROTO
+    getservbyport PORT,PROTO
+    getservent
+    setservent STAYOPEN
+    endservent
+            These routines are the same as their counterparts in the system C
+            library. In list context, the return values from the various get
+            routines are as follows:
+
+             # 0        1          2           3         4
+             ( $name,   $aliases,  $port,      $proto    ) = getserv*
+
+            (If the entry doesn't exist you get an empty list.)
+
+            In scalar context, you get the name, unless the function was a
+            lookup by name, in which case you get the other thing, whatever it
+            is. (If the entry doesn't exist you get the undefined value.)
+
 AUTHOR
 ======
 

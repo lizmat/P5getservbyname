@@ -1,5 +1,6 @@
 use v6.c;
-unit module P5getservbyname:ver<0.0.1>:auth<cpan:ELIZABETH>;
+
+unit module P5getservbyname:ver<0.0.2>:auth<cpan:ELIZABETH>;
 
 use NativeCall;
 
@@ -95,6 +96,26 @@ This module tries to mimic the behaviour of the C<getservbyname> and associated
 functions of Perl 5 as closely as possible.  It exports by default:
 
     endservent getservbyname getservbyport getservent setservent
+
+=head1 ORIGINAL PERL 5 DOCUMENTATION
+
+    getservbyname NAME,PROTO
+    getservbyport PORT,PROTO
+    getservent
+    setservent STAYOPEN
+    endservent
+            These routines are the same as their counterparts in the system C
+            library. In list context, the return values from the various get
+            routines are as follows:
+
+             # 0        1          2           3         4
+             ( $name,   $aliases,  $port,      $proto    ) = getserv*
+
+            (If the entry doesn't exist you get an empty list.)
+
+            In scalar context, you get the name, unless the function was a
+            lookup by name, in which case you get the other thing, whatever it
+            is. (If the entry doesn't exist you get the undefined value.)
 
 =head1 AUTHOR
 

@@ -4,7 +4,7 @@ use P5getservbyname;
 
 plan 12;
 
-my @smtp = 'smtp','',25,'tcp';
+my @smtp = 'smtp', $*KERNEL.name eq 'darwin' ?? '' !! 'mail',25,'tcp';
 
 is getservbyname("smtp","tcp", :scalar), 25,
   'did we find smtp by name in scalar context';

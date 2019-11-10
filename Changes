@@ -2,6 +2,9 @@ Revision history for P5getservbyname
 
 {{$NEXT}}
 
+0.0.5  2019-11-10T14:01:32+01:00
+    - changed Perl 5 to Perl
+
 0.0.4  2019-03-17T22:11:24+01:00
     - Deprecate :scalar in favour of Scalar as first positional
     - Update copyright year

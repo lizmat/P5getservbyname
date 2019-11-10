@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/lizmat/P5getservbyname.svg?branch=master)](https://travis-ci.org/lizmat/P5getservbyname)
-
 NAME
 ====
 
-P5getservbyname - Implement Perl 5's getservbyname() and associated built-ins
+P5getservbyname - Implement Perl's getservbyname() and associated built-ins
 
 SYNOPSIS
 ========
@@ -20,7 +18,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-This module tries to mimic the behaviour of the `getservbyname` and associated functions of Perl 5 as closely as possible. It exports by default:
+This module tries to mimic the behaviour of the `getservbyname` and associated functions of Perl as closely as possible. It exports by default:
 
     endservent getservbyname getservbyport getservent setservent
 
@@ -57,7 +55,7 @@ COPYRIGHT AND LICENSE
 
 Copyright 2018-2019 Elizabeth Mattijsen
 
-Re-imagined from Perl 5 as part of the CPAN Butterfly Plan.
+Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

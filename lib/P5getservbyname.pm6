@@ -1,6 +1,6 @@
 use v6.c;
 
-unit module P5getservbyname:ver<0.0.4>:auth<cpan:ELIZABETH>;
+unit module P5getservbyname:ver<0.0.5>:auth<cpan:ELIZABETH>;
 
 use NativeCall;
 
@@ -90,19 +90,19 @@ multi sub getservent() { _getservent.list }
 my sub setservent($stayopen) is export {
     my int32 $nstayopen = ?$stayopen;
     _setservent($nstayopen);
-    1;  # this is apparently what Perl 5 does, although not documented
+    1;  # this is apparently what Perl does, although not documented
 }
 
 my sub endservent() is export {
     _endservent;
-    1;  # this is apparently what Perl 5 does, although not documented
+    1;  # this is apparently what Perl does, although not documented
 }
 
 =begin pod
 
 =head1 NAME
 
-P5getservbyname - Implement Perl 5's getservbyname() and associated built-ins
+P5getservbyname - Implement Perl's getservbyname() and associated built-ins
 
 =head1 SYNOPSIS
 
@@ -118,7 +118,7 @@ P5getservbyname - Implement Perl 5's getservbyname() and associated built-ins
 =head1 DESCRIPTION
 
 This module tries to mimic the behaviour of the C<getservbyname> and associated
-functions of Perl 5 as closely as possible.  It exports by default:
+functions of Perl as closely as possible.  It exports by default:
 
     endservent getservbyname getservbyport getservent setservent
 
@@ -153,7 +153,7 @@ and Pull Requests are welcome.
 
 Copyright 2018-2019 Elizabeth Mattijsen
 
-Re-imagined from Perl 5 as part of the CPAN Butterfly Plan.
+Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

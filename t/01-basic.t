@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 use Test;
 use P5getservbyname;
 
@@ -13,4 +13,4 @@ for @supported {
     nok P5getservbyname::{$_}:exists, "is $_ NOT externally accessible?";
 }
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

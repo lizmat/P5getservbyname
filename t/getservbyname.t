@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 use Test;
 use P5getservbyname;
 %*ENV<RAKUDO_NO_DEPRECATIONS> = True;
@@ -45,4 +45,4 @@ is getservbyport(99999, "tcp", :scalar), Nil,
 is-deeply getservbyport(99999, "foo"), (),
   'did lookup by non-existing port fail';
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

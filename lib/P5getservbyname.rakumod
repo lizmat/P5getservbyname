@@ -1,6 +1,6 @@
 use v6.*;
 
-unit module P5getservbyname:ver<0.0.6>:auth<cpan:ELIZABETH>;
+unit module P5getservbyname:ver<0.0.7>:auth<zef:lizmat>;
 
 use NativeCall;
 
@@ -152,14 +152,14 @@ on Windows.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/P5getservbyname . Comments
 and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2020 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 

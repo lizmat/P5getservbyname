@@ -1,7 +1,3 @@
-use v6.*;
-
-unit module P5getservbyname:ver<0.0.7>:auth<zef:lizmat>;
-
 use NativeCall;
 
 sub be2le16(uint32 $value) { ($value +> 8) +| (($value +& 0xff) +< 8) }
@@ -53,23 +49,12 @@ my proto sub getservbyname(|) is export {*}
 multi sub getservbyname(Scalar:U, Str() $name, Str() $proto) {
     _getservbyname($name,$proto).scalar(:port)
 }
-multi sub getservbyname(Str() $name, Str() $proto, :$scalar!)
-  is DEPRECATED('Scalar as first positional')
-{
-    _getservbyname($name,$proto).scalar(:port)
-}
 multi sub getservbyname(Str() $name, Str() $proto) {
     _getservbyname($name,$proto).list
 }
 
 my proto sub getservbyport(|) is export {*}
 multi sub getservbyport(Scalar:U, Int:D $port, Str() $proto) {
-    my int32 $nport = be2le16($port);
-    _getservbyport($nport,$proto).scalar
-}
-multi sub getservbyport(Int:D $port, Str() $proto, :$scalar!)
-  is DEPRECATED('Scalar as first positional')
-{
     my int32 $nport = be2le16($port);
     _getservbyport($nport,$proto).scalar
 }
@@ -80,11 +65,6 @@ multi sub getservbyport(Int:D $port, Str() $proto) {
 
 my proto sub getservent(|) is export {*}
 multi sub getservent(Scalar:U) { _getservent.scalar }
-multi sub getservent(:$scalar!)
-  is DEPRECATED('Scalar as first positional')
-{
-    _getservent.scalar
-}
 multi sub getservent() { _getservent.list }
 
 my sub setservent($stayopen) is export {
@@ -154,12 +134,16 @@ on Windows.
 
 Elizabeth Mattijsen <liz@raku.rocks>
 
+If you like this module, or what I’m doing more generally, committing to a
+L<small sponsorship|https://github.com/sponsors/lizmat/>  would mean a great
+deal to me!
+
 Source can be located at: https://github.com/lizmat/P5getservbyname . Comments
 and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021, 2023 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 

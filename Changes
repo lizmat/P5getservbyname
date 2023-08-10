@@ -2,6 +2,11 @@ Revision history for P5getservbyname
 
 {{$NEXT}}
 
+0.0.8  2023-08-10T18:22:56+02:00
+    - Update test file extension
+    - Removed deprecations
+    - Added sponsor link
+
 0.0.7  2021-09-09T12:22:24+02:00
     - Change file extension to .rakumod
     - Migrate to zef ecosystem
